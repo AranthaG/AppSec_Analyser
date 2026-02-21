@@ -72,7 +72,7 @@ AppSec_Analyser/
 Ensure you have **Python 3.x** installed.
 
 ### 2️⃣ Run the Analyzer
-```
+```bash
 pip install -r requirements.txt
 python analyzer.py https://example.com
 ```
