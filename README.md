@@ -71,7 +71,8 @@ AppSec_Analyser/
 ### 1️⃣ Install Dependencies
 Ensure you have **Python 3.x** installed.
 
-```bash
+### 2️⃣ Run the Analyzer
+```
 pip install -r requirements.txt
 python analyzer.py https://example.com
 ```
