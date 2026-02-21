@@ -66,7 +66,7 @@ AppSec_Analyser/
 │   └── cors_check.py      # CORS simulation logic
 └── README.md
 ```
-
+---
 ## ▶️ How to Run
 
 ### 1️⃣ Install Dependencies
