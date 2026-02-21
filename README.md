@@ -84,12 +84,12 @@ python analyzer.py https://example.com
 **🚀 Status:** Actively under development
 
 ### Planned Improvements
-- [ ] Advanced validation of security header values  
+- Advanced validation of security header values  
   (e.g., detecting `unsafe-inline` or `unsafe-eval` in CSP)
-- [ ] Improved severity scoring with an overall **Security Grade (A–F)**
-- [ ] Export findings to **JSON** and **HTML** reports
-- [ ] CI/CD automation support using **GitHub Actions**
-- [ ] Support for scanning multiple URLs in a single run
+- Improved severity scoring with an overall **Security Grade (A–F)**
+- Export findings to **JSON** and **HTML** reports
+- CI/CD automation support using **GitHub Actions**
+- Support for scanning multiple URLs in a single run
 
 ---
 
