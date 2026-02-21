@@ -82,43 +82,39 @@ python analyzer.py [https://example.com](https://example.com)
 * [https://www.wikipedia.org](https://www.wikipedia.org)
 
 ---
+🚧 Project Status & Roadmap
+🚀 Status: Actively under development.
 
-## 🚧 Project Status & Roadmap
+Planned Improvements:
 
-🚀 **Status:** Actively under development.
+[ ] Advanced Validation: Check security header values (e.g., flagging 'unsafe-inline' in CSP).
 
-**Planned Improvements:**
-- [ ] **Advanced Validation:** Check security header *values* (e.g., flagging `'unsafe-inline'` in CSP).
-- [ ] **Scoring System:** Implement an improved severity scoring logic for a "Security Grade" (A-F).
-- [ ] **Reporting:** Support for exporting findings to **JSON** or **HTML** formats.
-- [ ] **Automation:** Add CI/CD integration support via **GitHub Actions**.
+[ ] Scoring System: Implement an improved severity scoring logic for a "Security Grade" (A-F).
 
----
+[ ] Reporting: Support for exporting findings to JSON or HTML formats.
 
-## ⚠️ Scope & Limitations
+[ ] Automation: Add CI/CD integration support via GitHub Actions.
 
-* **Posture Analysis:** This tool focuses on configuration analysis, not active vulnerability exploitation.
-* **Public Access:** Designed specifically for publicly accessible web applications.
-* **Non-Invasive:** Does not perform authentication-based testing, fuzzing, or deep crawling.
-* **Environment Dependent:** SSL/TLS verification behavior may vary based on the local environment's CA certificates.
+⚠️ Scope & Limitations
+Posture Analysis: This tool focuses on configuration analysis, not active vulnerability exploitation.
 
----
+Public Access: Designed specifically for publicly accessible web applications.
 
-## 🎯 Learning Outcomes
+Non-Invasive: Does not perform authentication-based testing, fuzzing, or deep crawling.
 
+Environment Dependent: SSL/TLS verification behavior may vary based on the local environment's CA certificates.
+
+🎯 Learning Outcomes
 Through the development of this tool, I am practicing:
-* **Python for Cybersecurity:** Building robust scripts that interact directly with web protocols.
-* **AppSec Automation:** Learning how to scale manual security checks into repeatable code.
-* **Defensive Security:** Gaining a deep understanding of the "why" behind TLS configurations and security headers.
 
----
+Python for Cybersecurity: Building robust scripts that interact directly with web protocols.
 
-## 📌 Disclaimer
+AppSec Automation: Learning how to scale manual security checks into repeatable code.
 
-This tool is intended for **educational purposes only**. Only scan applications you own or have explicit written permission to test. Use responsibly and ethically.
+Defensive Security: Gaining a deep understanding of the "why" behind TLS configurations and security headers.
 
----
+📌 Disclaimer
+This tool is intended for educational purposes only. Only scan applications you own or have explicit written permission to test. Use responsibly and ethically.
 
-## 🤝 Author
-
-**Arantha Shreya** *Cybersecurity enthusiast exploring application security and automation through hands-on projects.*
+🤝 Author
+Arantha Shreya Cybersecurity enthusiast exploring application security and automation through hands-on projects.
