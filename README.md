@@ -18,33 +18,34 @@ The tool is intentionally built as a **CLI-based application** to support automa
 ## 🔍 Features
 
 ### 🔐 Transport Security (TLS)
-* **Protocol Validation:** Performs a real TLS handshake with the server.
-* **Legacy Detection:** Identifies deprecated TLS versions (TLS 1.0 and TLS 1.1).
-* **Security Flagging:** Flags insecure or misconfigured TLS setups.
+- **Protocol Validation:** Performs a real TLS handshake with the server  
+- **Legacy Detection:** Identifies deprecated TLS versions (TLS 1.0 and TLS 1.1)  
+- **Security Flagging:** Flags insecure or misconfigured TLS setups  
 
 ### 🧱 HTTP Security Headers
 Checks for the presence and basic configuration of critical security headers:
-* **Content-Security-Policy (CSP):** Prevents XSS and injection attacks.
-* **Strict-Transport-Security (HSTS):** Enforces HTTPS connections.
-* **X-Frame-Options:** Protects against Clickjacking.
-* **X-Content-Type-Options:** Prevents MIME-sniffing.
-* **Referrer-Policy:** Controls how much referrer information is shared.
-* **Permissions-Policy:** Restricts browser features (Camera, Geolocation, etc.).
 
-> [!IMPORTANT]  
+- **Content-Security-Policy (CSP):** Prevents XSS and injection attacks  
+- **Strict-Transport-Security (HSTS):** Enforces HTTPS connections  
+- **X-Frame-Options:** Protects against Clickjacking  
+- **X-Content-Type-Options:** Prevents MIME-sniffing  
+- **Referrer-Policy:** Controls referrer information leakage  
+- **Permissions-Policy:** Restricts browser features (camera, geolocation, etc.)
+
+> **IMPORTANT**  
 > Missing headers are reported as **medium-severity security posture issues**.
 
 ### 🌐 CORS (Cross-Origin Resource Sharing)
-* Simulates requests from an **untrusted origin**.
-* Detects **overly permissive** CORS policies.
-* Flags risky configurations such as **wildcard origins** (`*`) and credential exposure.
+- Simulates requests from an **untrusted origin**  
+- Detects **overly permissive** CORS policies  
+- Flags risky configurations such as **wildcard origins (`*`)** and credential exposure  
 
 ---
 
 ## 🧠 Severity Model
 
-| Severity | Color | Description |
-| :--- | :--- | :--- |
+| Severity | Indicator | Description |
+|--------|----------|-------------|
 | **High** | 🔴 | Direct security risk or critical misconfiguration |
 | **Medium** | 🟠 | Weak security posture or missing protection |
 | **Low** | 🟢 | Informational or connectivity-related issue |
@@ -56,65 +57,87 @@ Checks for the presence and basic configuration of critical security headers:
 ```text
 AppSec_Analyser/
 │
-├── analyzer.py            # Main CLI Entry Point
+├── analyzer.py            # Main CLI entry point
 ├── requirements.txt       # Project dependencies
-├── checks/                # Security Logic Modules
+├── checks/                # Security logic modules
 │   ├── __init__.py
 │   ├── tls_check.py       # SSL/TLS handshake logic
-│   ├── headers_check.py   # HTTP Response header analysis
+│   ├── headers_check.py   # HTTP response header analysis
 │   └── cors_check.py      # CORS simulation logic
 └── README.md
-
----
 
 ## ▶️ How to Run
 
 ### 1️⃣ Install Dependencies
-Ensure you have **Python 3.x** installed on your system.
+Ensure you have **Python 3.x** installed.
+
 ```bash
-pip install requests
-### 2️⃣ Run the Analyzer
-python analyzer.py [https://example.com](https://example.com)
+pip install -r requirements.txt
+python analyzer.py https://example.com
+```
+---
 
-**Try scanning common public sites for comparison:**
+## 🚧 Project Status & Roadmap
 
-* [https://github.com](https://github.com)
-* [https://www.wikipedia.org](https://www.wikipedia.org)
+**🚀 Status:** Actively under development
+
+### Planned Improvements
+- [ ] Advanced validation of security header values  
+  (e.g., detecting `unsafe-inline` or `unsafe-eval` in CSP)
+- [ ] Improved severity scoring with an overall **Security Grade (A–F)**
+- [ ] Export findings to **JSON** and **HTML** reports
+- [ ] CI/CD automation support using **GitHub Actions**
+- [ ] Support for scanning multiple URLs in a single run
 
 ---
-🚧 Project Status & Roadmap
-🚀 Status: Actively under development.
 
-Planned Improvements:
+## ⚠️ Scope & Limitations
 
-[ ] Advanced Validation: Check security header values (e.g., flagging 'unsafe-inline' in CSP).
+- **Posture Analysis Only**  
+  This tool focuses on configuration and security posture, not exploitation.
 
-[ ] Scoring System: Implement an improved severity scoring logic for a "Security Grade" (A-F).
+- **Public Targets**  
+  Designed for publicly accessible web applications only.
 
-[ ] Reporting: Support for exporting findings to JSON or HTML formats.
+- **Non-Invasive**  
+  No authentication testing, fuzzing, brute-force attacks, or deep crawling.
 
-[ ] Automation: Add CI/CD integration support via GitHub Actions.
+- **Environment Dependent**  
+  TLS and certificate validation may vary based on local CA trust stores.
 
-⚠️ Scope & Limitations
-Posture Analysis: This tool focuses on configuration analysis, not active vulnerability exploitation.
+---
 
-Public Access: Designed specifically for publicly accessible web applications.
+## 🎯 Learning Outcomes
 
-Non-Invasive: Does not perform authentication-based testing, fuzzing, or deep crawling.
+Through building this tool, I am practicing:
 
-Environment Dependent: SSL/TLS verification behavior may vary based on the local environment's CA certificates.
+- **Python for Cybersecurity**  
+  Writing protocol-aware scripts that interact with TLS and HTTP layers.
 
-🎯 Learning Outcomes
-Through the development of this tool, I am practicing:
+- **Application Security Automation**  
+  Converting manual AppSec checks into repeatable, automated workflows.
 
-Python for Cybersecurity: Building robust scripts that interact directly with web protocols.
+- **Defensive Security Thinking**  
+  Understanding *why* security headers, TLS versions, and CORS policies matter.
 
-AppSec Automation: Learning how to scale manual security checks into repeatable code.
+- **DevSecOps Mindset**  
+  Designing tools that can fit into CI/CD and security pipelines.
 
-Defensive Security: Gaining a deep understanding of the "why" behind TLS configurations and security headers.
+---
 
-📌 Disclaimer
-This tool is intended for educational purposes only. Only scan applications you own or have explicit written permission to test. Use responsibly and ethically.
+## 📌 Disclaimer
 
-🤝 Author
-Arantha Shreya Cybersecurity enthusiast exploring application security and automation through hands-on projects.
+This project is intended for **educational purposes only**.
+
+Only scan applications that you:
+- Own, or
+- Have **explicit written permission** to test.
+
+The author is not responsible for misuse of this tool.
+
+---
+
+## 🤝 Author
+
+**Arantha Shreya**  
+Cybersecurity enthusiast exploring **application security** and **security automation** through hands-on projects.
