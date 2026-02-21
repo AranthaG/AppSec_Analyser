@@ -65,6 +65,7 @@ AppSec_Analyser/
 │   ├── headers_check.py   # HTTP response header analysis
 │   └── cors_check.py      # CORS simulation logic
 └── README.md
+```
 
 ## ▶️ How to Run
 
